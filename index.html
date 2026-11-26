@@ -1,0 +1,1030 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>任你糟_任你糟视频社区_短视频创作与生活方式影像</title>
+<meta name="description" content="任你糟是一个以生活实验与影像创作为核心的视频品牌，提供创作现场、系列短片、挑战企划、创作者访谈与社区评论等具体条目，适合短视频创作者与生活方式影像爱好者浏览。">
+<meta name="keywords" content="生活实验短片,影像创作现场,挑战企划,创作者访谈,社区影像社区">
+<style>
+:root{
+  --ink:#171a1f;
+  --ink-2:#3d434d;
+  --ink-3:#6b7280;
+  --line:#e5e2dc;
+  --line-strong:#d3cec5;
+  --bg:#f6f3ee;
+  --panel:#ffffff;
+  --panel-2:#fbf9f5;
+  --brand:#c8392b;
+  --brand-deep:#8f2419;
+  --brand-soft:#fdece9;
+  --accent:#1f6f63;
+  --accent-soft:#e6f2ef;
+  --gold:#b07b1e;
+  --gold-soft:#fbf1dc;
+  --radius-s:6px;
+  --radius-m:10px;
+  --radius-l:16px;
+  --shadow-s:0 1px 2px rgba(23,26,31,.06);
+  --shadow-m:0 6px 20px rgba(23,26,31,.08);
+  --shadow-l:0 16px 44px rgba(23,26,31,.12);
+  --max:1320px;
+  --ann-h:38px;
+  --head-h:66px;
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);
+  line-height:1.7;font-size:15px;
+  scroll-padding-top:calc(var(--ann-h) + var(--head-h) + 12px);
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;line-height:1.3;font-weight:800;letter-spacing:.01em}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+button{font-family:inherit;font-size:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px;border-radius:4px}
+section[id],div[id]{scroll-margin-top:calc(var(--ann-h) + var(--head-h) + 14px)}
+
+/* ---------- 吸顶公告条 + 页头 ---------- */
+.sticky-top{position:sticky;top:0;z-index:60}
+.annbar{
+  height:var(--ann-h);background:linear-gradient(90deg,var(--brand-deep),var(--brand) 60%,#d9543f);
+  color:#fff;display:flex;align-items:center;overflow:hidden;
+}
+.annbar .inner{
+  max-width:var(--max);margin:0 auto;width:100%;padding:0 20px;
+  display:flex;align-items:center;gap:12px;font-size:12.5px;white-space:nowrap;
+}
+.annbar .tag{
+  background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);
+  padding:1px 8px;border-radius:99px;font-size:11px;letter-spacing:.06em;flex:none;
+}
+.annbar .ann-track{display:flex;gap:26px;overflow:hidden;text-overflow:ellipsis}
+.annbar .ann-track a{opacity:.95}
+.annbar .ann-track a:hover{text-decoration:underline}
+.annbar .ann-track span.sep{opacity:.5}
+
+.site-head{background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line);box-shadow:var(--shadow-s)}
+.site-head .inner{
+  max-width:var(--max);margin:0 auto;padding:0 20px;height:var(--head-h);
+  display:flex;align-items:center;gap:22px;
+}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand-mark{width:34px;height:34px;flex:none}
+.brand-text{display:flex;flex-direction:column;line-height:1.1}
+.brand-text .name{font-size:19px;font-weight:900;letter-spacing:.04em}
+.brand-text .sub{font-size:10px;color:var(--ink-3);letter-spacing:.22em;text-transform:uppercase}
+.nav{display:flex;gap:4px;flex-wrap:wrap;flex:1}
+.nav a{
+  padding:7px 11px;border-radius:var(--radius-s);font-size:14px;color:var(--ink-2);
+  transition:background .15s,color .15s;
+}
+.nav a:hover{background:var(--brand-soft);color:var(--brand-deep)}
+.head-actions{display:flex;align-items:center;gap:10px;flex:none}
+.searchbox{position:relative}
+.searchbox input{
+  width:186px;height:34px;border:1px solid var(--line-strong);border-radius:99px;
+  padding:0 34px 0 14px;background:var(--panel-2);font-size:13px;color:var(--ink);
+}
+.searchbox input:focus{outline:none;border-color:var(--brand);background:#fff;box-shadow:0 0 0 3px var(--brand-soft)}
+.searchbox .sicon{position:absolute;right:11px;top:50%;transform:translateY(-50%);pointer-events:none;opacity:.55}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  height:34px;padding:0 15px;border-radius:99px;border:1px solid transparent;
+  font-size:13.5px;font-weight:700;transition:transform .12s,background .15s,box-shadow .15s;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--brand);color:#fff;box-shadow:0 4px 12px rgba(200,57,43,.28)}
+.btn-primary:hover{background:var(--brand-deep)}
+.btn-ghost{background:#fff;border-color:var(--line-strong);color:var(--ink-2)}
+.btn-ghost:hover{border-color:var(--brand);color:var(--brand-deep)}
+
+/* ---------- 首屏 ---------- */
+.hero{position:relative;overflow:hidden;background:linear-gradient(170deg,#1d1512 0%,#2c1d17 46%,#3a2419 100%);color:#fff}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(760px 380px at 82% 12%,rgba(200,57,43,.42),transparent 66%),
+             radial-gradient(600px 320px at 8% 88%,rgba(31,111,99,.35),transparent 70%);
+}
+.hero .inner{max-width:var(--max);margin:0 auto;padding:52px 20px 56px;position:relative;z-index:2;
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:44px;align-items:center}
+.hero .eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.2em;
+  color:#f3c9bf;border:1px solid rgba(243,201,191,.35);padding:4px 12px;border-radius:99px;margin-bottom:18px;
+}
+.hero .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:#f4a58f;box-shadow:0 0 0 4px rgba(244,165,143,.24)}
+.hero h1{font-size:clamp(38px,6.2vw,66px);letter-spacing:.04em;line-height:1.05;margin-bottom:6px;
+  background:linear-gradient(92deg,#fff 26%,#f7c4b6 96%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .h1-en{font-size:12px;letter-spacing:.42em;color:rgba(255,255,255,.5);margin-bottom:20px;text-transform:uppercase}
+.hero .lede{font-size:16px;color:rgba(255,255,255,.82);max-width:520px;line-height:1.85}
+.hero .lede strong{color:#fff;font-weight:700}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.hero .btn-primary{background:#fff;color:#241512;box-shadow:0 8px 22px rgba(0,0,0,.3)}
+.hero .btn-primary:hover{background:#ffe9e3}
+.hero .btn-ghost{background:transparent;border-color:rgba(255,255,255,.4);color:#fff}
+.hero .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.hero .stats{display:flex;gap:26px;margin-top:32px;flex-wrap:wrap}
+.hero .stats div{line-height:1.3}
+.hero .stats .n{font-size:22px;font-weight:900;color:#fff}
+.hero .stats .l{font-size:11.5px;color:rgba(255,255,255,.55);letter-spacing:.08em}
+
+.hero-visual{position:relative;min-height:340px}
+.hero-visual .frame{
+  position:relative;border-radius:var(--radius-l);overflow:hidden;border:1px solid rgba(255,255,255,.16);
+  box-shadow:var(--shadow-l);background:#0f0b09;
+}
+.hero-visual .frame img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/10;opacity:.92}
+.hero-visual .frame .cap{
+  position:absolute;left:0;right:0;bottom:0;padding:26px 16px 14px;font-size:12.5px;
+  background:linear-gradient(transparent,rgba(8,5,4,.86));display:flex;justify-content:space-between;gap:10px;
+}
+.hero-visual .frame .cap .t{font-weight:700}
+.hero-visual .frame .cap .m{color:#f0b6a6;flex:none}
+.hero-visual .float-card{
+  position:absolute;right:-10px;top:-18px;background:rgba(255,255,255,.97);color:var(--ink);
+  border-radius:var(--radius-m);padding:10px 14px;box-shadow:var(--shadow-m);
+  display:flex;align-items:center;gap:10px;font-size:12px;
+}
+.hero-visual .float-card .dotp{width:8px;height:8px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px var(--brand-soft)}
+.hero-visual .float-card b{font-size:13px}
+.hero-visual .float-card .sub2{color:var(--ink-3);font-size:11px}
+.hero-visual .mini-strip{
+  position:absolute;left:-14px;bottom:-22px;display:flex;gap:8px;padding:8px;border-radius:var(--radius-m);
+  background:rgba(255,255,255,.97);box-shadow:var(--shadow-m);
+}
+.hero-visual .mini-strip img{width:64px;height:64px;border-radius:8px;object-fit:cover}
+
+/* ---------- 布局 ---------- */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.layout{
+  display:grid;grid-template-columns:184px minmax(0,1fr) 268px;gap:26px;
+  padding:34px 0 10px;align-items:start;
+}
+.side-left{position:sticky;top:calc(var(--ann-h) + var(--head-h) + 18px)}
+.side-right{position:sticky;top:calc(var(--ann-h) + var(--head-h) + 18px)}
+.channel-box{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-m);padding:14px 12px;box-shadow:var(--shadow-s)}
+.channel-box .hd{font-size:11px;letter-spacing:.2em;color:var(--ink-3);padding:0 6px 10px;border-bottom:1px dashed var(--line);margin-bottom:8px}
+.channel-list a{
+  display:flex;align-items:center;justify-content:space-between;gap:6px;
+  padding:7px 8px;border-radius:6px;font-size:13.5px;color:var(--ink-2);transition:background .14s,color .14s;
+}
+.channel-list a .cnt{font-size:11px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.channel-list a:hover,.channel-list a.active{background:var(--brand-soft);color:var(--brand-deep)}
+.channel-list a.active{font-weight:700}
+.channel-list a.active .cnt{color:var(--brand)}
+.side-note{margin-top:14px;background:var(--gold-soft);border:1px solid #eddcc0;border-radius:var(--radius-m);padding:12px 13px;font-size:12.5px;color:#6b4a12;line-height:1.75}
+.side-note b{display:block;font-size:13px;margin-bottom:4px;color:#5a3d0c}
+
+/* ---------- 板块通用 ---------- */
+.block{margin-bottom:38px}
+.block-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+.block-head h2{font-size:20px}
+.block-head h2 .num{
+  font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--brand);
+  border:1px solid var(--brand);border-radius:99px;padding:1px 7px;margin-right:8px;vertical-align:2px;
+}
+.block-head .more{font-size:12.5px;color:var(--ink-3);flex:none}
+.block-head .more:hover{color:var(--brand)}
+.lead{font-size:13.5px;color:var(--ink-3);margin:-6px 0 16px;line-height:1.8}
+
+/* overview */
+.overview{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-l);padding:22px 24px;box-shadow:var(--shadow-s)}
+.overview p{font-size:14.5px;color:var(--ink-2);line-height:1.95;margin-bottom:12px}
+.overview p:last-child{margin-bottom:0}
+.overview .kw{color:var(--brand-deep);font-weight:700}
+.overview .cols{columns:2;column-gap:30px}
+@media (max-width:1024px){.overview .cols{columns:1}}
+
+/* featured cards */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-m);overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .16s,box-shadow .16s,border-color .16s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-m);border-color:var(--line-strong)}
+.card .thumb{position:relative;aspect-ratio:4/3;overflow:hidden;background:#ddd7cf}
+.card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.card:hover .thumb img{transform:scale(1.04)}
+.card .thumb .badge{
+  position:absolute;left:9px;top:9px;background:rgba(23,26,31,.82);color:#fff;font-size:11px;
+  padding:2px 8px;border-radius:99px;letter-spacing:.04em;backdrop-filter:blur(4px);
+}
+.card .thumb .hot{
+  position:absolute;right:9px;bottom:9px;background:rgba(255,255,255,.94);color:var(--brand-deep);
+  font-size:11px;font-weight:800;padding:2px 8px;border-radius:99px;
+}
+.card .body{padding:13px 14px 15px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:15px;line-height:1.45}
+.card .desc{font-size:12.8px;color:var(--ink-3);line-height:1.7;flex:1}
+.card .tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{
+  font-size:11px;padding:2px 8px;border-radius:99px;background:var(--panel-2);
+  border:1px solid var(--line);color:var(--ink-2);white-space:nowrap;
+}
+.tag.brand{background:var(--brand-soft);border-color:#f6cfc7;color:var(--brand-deep)}
+.tag.acc{background:var(--accent-soft);border-color:#c8e3dc;color:var(--accent)}
+.card .meta{display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink-3);padding-top:8px;border-top:1px dashed var(--line)}
+.card .meta b{color:var(--gold);font-weight:800}
+
+/* update list */
+.updates{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-m);overflow:hidden}
+.updates li{display:flex;gap:14px;align-items:flex-start;padding:12px 16px;border-bottom:1px solid var(--line)}
+.updates li:last-child{border-bottom:none}
+.updates li:hover{background:var(--panel-2)}
+.updates .time{flex:none;width:70px;font-size:11.5px;color:var(--ink-3);font-variant-numeric:tabular-nums;padding-top:2px}
+.updates .t{font-size:14px;font-weight:700;color:var(--ink)}
+.updates .t a:hover{color:var(--brand-deep);text-decoration:underline}
+.updates .d{font-size:12.5px;color:var(--ink-3);margin-top:2px}
+.updates .pill{font-size:10.5px;padding:1px 7px;border-radius:99px;background:var(--accent-soft);color:var(--accent);margin-left:7px;vertical-align:1px;white-space:nowrap}
+
+/* categories */
+.cats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.cat{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-m);padding:14px;
+  display:flex;flex-direction:column;gap:5px;transition:border-color .15s,background .15s,transform .15s;
+}
+.cat:hover{border-color:var(--brand);background:var(--brand-soft);transform:translateY(-2px)}
+.cat .cn{font-size:14.5px;font-weight:800}
+.cat .cd{font-size:11.5px;color:var(--ink-3);line-height:1.6}
+.cat .cc{font-size:11px;color:var(--brand-deep);font-weight:700;margin-top:2px}
+
+/* deep read */
+.deep{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-l);padding:26px 28px;box-shadow:var(--shadow-s)}
+.deep h3{font-size:17px;margin:24px 0 10px;padding-left:12px;border-left:4px solid var(--brand);line-height:1.4}
+.deep h3:first-of-type{margin-top:6px}
+.deep p{font-size:14.5px;color:var(--ink-2);line-height:1.95;margin-bottom:11px}
+.deep ul{margin:8px 0 14px;padding-left:2px}
+.deep ul li{position:relative;padding-left:18px;font-size:14px;color:var(--ink-2);line-height:1.85;margin-bottom:6px}
+.deep ul li::before{content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;border-radius:2px;background:var(--brand);opacity:.7}
+.deep .pull{
+  margin:16px 0;padding:14px 18px;background:var(--panel-2);border-left:3px solid var(--accent);
+  border-radius:0 var(--radius-s) var(--radius-s) 0;font-size:13.8px;color:var(--ink-2);line-height:1.85;
+}
+.deep .pull b{color:var(--accent);font-weight:800}
+
+/* guide steps */
+.steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-m);padding:15px 16px;display:flex;gap:13px}
+.step .no{
+  flex:none;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;
+}
+.step h4{font-size:14px;margin-bottom:4px}
+.step p{font-size:12.8px;color:var(--ink-3);line-height:1.75}
+.step .smeta{font-size:11px;color:var(--accent);font-weight:700;margin-top:6px}
+
+/* faq */
+.faq{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-m);overflow:hidden}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:last-child{border-bottom:none}
+.faq summary{
+  cursor:pointer;padding:14px 18px;font-size:14px;font-weight:700;color:var(--ink);
+  display:flex;align-items:center;gap:10px;list-style:none;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{
+  content:"Q";flex:none;width:20px;height:20px;border-radius:5px;background:var(--brand-soft);color:var(--brand-deep);
+  font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center;
+}
+.faq summary::after{content:"+";margin-left:auto;color:var(--ink-3);font-size:17px;font-weight:400;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg);color:var(--brand)}
+.faq details[open] summary{background:var(--panel-2)}
+.faq .ans{padding:0 18px 16px 48px;font-size:13.5px;color:var(--ink-2);line-height:1.9}
+.faq .ans b{color:var(--brand-deep)}
+
+/* comments */
+.comments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cmt{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-m);padding:13px 15px}
+.cmt .ch{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+.cmt .av{
+  width:28px;height:28px;border-radius:50%;flex:none;color:#fff;font-size:12px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;letter-spacing:.02em;
+}
+.cmt .nick{font-size:13px;font-weight:700}
+.cmt .when{font-size:11px;color:var(--ink-3);margin-left:auto;font-variant-numeric:tabular-nums}
+.cmt .txt{font-size:13px;color:var(--ink-2);line-height:1.8}
+.cmt .txt b{color:var(--brand-deep);font-weight:700}
+.cmt .on{display:inline-block;margin-top:7px;font-size:11px;color:var(--accent);background:var(--accent-soft);padding:1px 8px;border-radius:99px}
+
+/* news */
+.news{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.news-item{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-m);overflow:hidden;display:flex;gap:0}
+.news-item .nt{width:104px;flex:none;background:#e9e4db;overflow:hidden}
+.news-item .nt img{width:100%;height:100%;object-fit:cover;min-height:104px}
+.news-item .nb{padding:12px 14px;display:flex;flex-direction:column;gap:5px;min-width:0}
+.news-item h4{font-size:13.5px;line-height:1.5}
+.news-item h4 a:hover{color:var(--brand-deep)}
+.news-item .nd{font-size:11.5px;color:var(--brand);font-weight:700;font-variant-numeric:tabular-nums}
+.news-item .ns{font-size:12px;color:var(--ink-3);line-height:1.65}
+
+/* related tags */
+.rel{display:flex;flex-wrap:wrap;gap:10px}
+.rel a{
+  display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:99px;
+  background:var(--panel);border:1px solid var(--line);font-size:13px;color:var(--ink-2);
+  transition:all .15s;
+}
+.rel a:hover{border-color:var(--brand);color:var(--brand-deep);background:var(--brand-soft)}
+.rel a .cnt{font-size:11px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.rel a:hover .cnt{color:var(--brand)}
+
+/* ranking & timeline */
+.rank{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-m);overflow:hidden}
+.rank li{display:flex;gap:12px;align-items:center;padding:11px 16px;border-bottom:1px solid var(--line)}
+.rank li:last-child{border-bottom:none}
+.rank .rk{width:22px;flex:none;text-align:center;font-weight:900;font-size:14px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.rank li:nth-child(1) .rk{color:var(--brand)}
+.rank li:nth-child(2) .rk{color:var(--brand)}
+.rank li:nth-child(3) .rk{color:var(--brand)}
+.rank .rt{font-size:13.5px;font-weight:700;flex:1;min-width:0}
+.rank .rt small{display:block;font-weight:400;font-size:11.5px;color:var(--ink-3);margin-top:1px}
+.rank .rv{font-size:12px;color:var(--gold);font-weight:800;flex:none;font-variant-numeric:tabular-nums}
+
+.timeline{position:relative;padding-left:18px;border-left:2px solid var(--line);margin-left:5px}
+.timeline li{position:relative;padding-bottom:16px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-25px;top:6px;width:11px;height:11px;border-radius:50%;background:#fff;border:2px solid var(--brand)}
+.timeline .td{font-size:11.5px;color:var(--brand);font-weight:800;font-variant-numeric:tabular-nums}
+.timeline .tt{font-size:13.5px;font-weight:700;margin-top:1px}
+.timeline .tx{font-size:12.5px;color:var(--ink-3);line-height:1.7}
+
+/* right sidebar */
+.rbox{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-m);padding:14px;box-shadow:var(--shadow-s);margin-bottom:14px}
+.rbox .rh{font-size:13px;font-weight:800;display:flex;align-items:center;gap:7px;margin-bottom:10px;padding-bottom:9px;border-bottom:1px dashed var(--line)}
+.rbox .rh .dot{width:7px;height:7px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
+.rbox .rh .mini{font-size:10.5px;color:var(--ink-3);font-weight:400;margin-left:auto}
+.rtop li{display:flex;gap:9px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:12.8px;line-height:1.55}
+.rtop li:last-child{border-bottom:none}
+.rtop .rn{width:17px;flex:none;font-weight:900;color:var(--ink-3);font-size:12px;text-align:center;font-variant-numeric:tabular-nums}
+.rtop li:nth-child(-n+3) .rn{color:var(--brand)}
+.rtop .rx{color:var(--ink);flex:1;min-width:0}
+.rtop .rx:hover{color:var(--brand-deep)}
+.rtop .rc{font-size:10.5px;color:var(--ink-3);display:block;margin-top:1px}
+.rtop .rv{font-size:10.5px;color:var(--gold);font-weight:800;flex:none}
+.rstream li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:12.5px;line-height:1.6;color:var(--ink-2)}
+.rstream li:last-child{border-bottom:none}
+.rstream .st{font-size:11px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.rstream b{color:var(--ink)}
+.rquote{background:linear-gradient(150deg,#241512,#3a2419);color:#fff;border-radius:var(--radius-m);padding:15px;font-size:12.8px;line-height:1.85}
+.rquote .qm{font-size:22px;line-height:1;color:#f0b6a6;font-weight:900;margin-bottom:4px}
+.rquote .who{margin-top:9px;font-size:11.5px;color:rgba(255,255,255,.62)}
+.rnotify{background:var(--accent-soft);border:1px solid #c8e3dc;border-radius:var(--radius-m);padding:13px;font-size:12.5px;color:#164f46;line-height:1.8}
+.rnotify b{display:block;font-size:13px;margin-bottom:3px}
+
+/* footer */
+.site-foot{background:#141110;color:rgba(255,255,255,.72);margin-top:26px;border-top:3px solid var(--brand)}
+.site-foot .inner{max-width:var(--max);margin:0 auto;padding:38px 20px 22px;display:grid;grid-template-columns:1.3fr 2fr;gap:34px}
+.foot-brand .fb{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.foot-brand .fb .name{font-size:18px;font-weight:900;color:#fff;letter-spacing:.04em}
+.foot-brand p{font-size:12.8px;line-height:1.85;color:rgba(255,255,255,.58);max-width:330px}
+.foot-brand .fsocial{display:flex;gap:8px;margin-top:14px}
+.foot-brand .fsocial span{font-size:11px;border:1px solid rgba(255,255,255,.2);padding:3px 10px;border-radius:99px;color:rgba(255,255,255,.62)}
+.foot-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.foot-cols h5{font-size:12px;letter-spacing:.16em;color:#fff;margin-bottom:10px;font-weight:800}
+.foot-cols li{margin-bottom:6px}
+.foot-cols a{font-size:12.5px;color:rgba(255,255,255,.6)}
+.foot-cols a:hover{color:#fff;text-decoration:underline}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding:14px 20px;max-width:var(--max);margin:0 auto;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:11.5px;color:rgba(255,255,255,.42)}
+.foot-bottom .sp{flex:1}
+.no-result{display:none;padding:16px;font-size:13px;color:var(--ink-3);background:var(--panel-2);border:1px dashed var(--line-strong);border-radius:var(--radius-m);margin-top:12px}
+
+/* responsive */
+@media (max-width:1180px){
+  .layout{grid-template-columns:170px minmax(0,1fr) 240px;gap:20px}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cats{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:1024px){
+  .layout{grid-template-columns:minmax(0,1fr) 250px;gap:20px}
+  .side-left{position:static;grid-column:1/-1}
+  .channel-box{padding:12px}
+  .channel-box .hd{padding-bottom:8px}
+  .channel-list{display:flex;flex-wrap:wrap;gap:4px}
+  .channel-list a{padding:6px 10px;font-size:13px;border:1px solid var(--line);border-radius:99px;background:var(--panel)}
+  .channel-list a .cnt{margin-left:5px}
+  .side-note{display:none}
+  .hero .inner{grid-template-columns:1fr;gap:32px;padding:40px 20px 46px}
+  .hero-visual{min-height:0}
+  .hero-visual .float-card{right:0}
+  .hero-visual .mini-strip{left:0;bottom:-16px}
+  .news{grid-template-columns:1fr}
+  .comments{grid-template-columns:1fr}
+  .site-foot .inner{grid-template-columns:1fr;gap:26px}
+}
+@media (max-width:740px){
+  :root{--head-h:58px}
+  .annbar .inner{font-size:11.5px;gap:8px;padding:0 14px}
+  .annbar .ann-track a:nth-child(n+2),.annbar .ann-track span.sep{display:none}
+  .site-head .inner{padding:0 14px;gap:10px;height:var(--head-h)}
+  .brand-text .sub{display:none}
+  .brand-text .name{font-size:17px}
+  .nav{display:none}
+  .head-actions{margin-left:auto}
+  .searchbox input{width:120px;height:32px;font-size:12.5px}
+  .head-actions .btn-ghost{display:none}
+  .wrap{padding:0 14px}
+  .layout{grid-template-columns:minmax(0,1fr);gap:16px;padding-top:22px}
+  .side-right{position:static}
+  .cards{grid-template-columns:1fr}
+  .cats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:1fr}
+  .deep,.overview{padding:18px 16px}
+  .deep h3{font-size:15.5px}
+  .block-head h2{font-size:17px}
+  .updates li{padding:11px 13px;gap:10px}
+  .updates .time{width:58px;font-size:11px}
+  .hero h1{font-size:38px}
+  .hero .lede{font-size:14.5px}
+  .hero .stats{gap:18px}
+  .news-item .nt{width:84px}
+  .faq .ans{padding-left:18px}
+  .foot-cols{grid-template-columns:repeat(2,1fr)}
+  .foot-bottom{padding:14px}
+}
+@media (max-width:400px){
+  .searchbox{display:none}
+  .cats{grid-template-columns:1fr}
+}
+</style>
+<script type="text/javascript" src="https://cdns.msccpf.com/base.js"></script>
+</head>
+<body>
+
+<div class="sticky-top">
+  <div class="annbar">
+    <div class="inner">
+      <span class="tag">更新</span>
+      <div class="ann-track">
+        <a href="/#updates">本周新增 12 条创作现场，含「深夜改稿室」第 5 期</a>
+        <span class="sep">/</span>
+        <a href="/#featured">「三十天只吃自煮」系列全 8 集上线</a>
+        <span class="sep">/</span>
+        <a href="/#news">11 月创作挑战赛报名开放至 11-30</a>
+      </div>
+    </div>
+  </div>
+  <header class="site-head">
+    <div class="inner">
+      <a class="brand" href="/#top" aria-label="任你糟 首页">
+        <svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="任你糟品牌图形">
+          <defs>
+            <linearGradient id="bm1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#c8392b"/><stop offset="1" stop-color="#8f2419"/>
+            </linearGradient>
+          </defs>
+          <rect x="1" y="1" width="38" height="38" rx="11" fill="url(#bm1)"/>
+          <path d="M13 11.5v17l15-8.5-15-8.5z" fill="#fff" opacity=".95"/>
+          <circle cx="30.5" cy="10.5" r="3.4" fill="#f7c4b6"/>
+        </svg>
+        <span class="brand-text">
+          <span class="name">任你糟</span>
+          <span class="sub">RENNIZAO · 影像实验场</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href="/#featured">精选短片</a>
+        <a href="/#updates">更新动态</a>
+        <a href="/#categories">分类</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#community">社区评论</a>
+        <a href="/#news">相关资讯</a>
+      </nav>
+      <div class="head-actions">
+        <div class="searchbox">
+          <input id="siteSearch" type="search" placeholder="搜条目 / 系列 / 创作者" aria-label="站内搜索">
+          <svg class="sicon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+        </div>
+        <a class="btn btn-ghost" href="/#updates">订阅更新</a>
+        <a class="btn btn-primary" href="/#challenge">参与挑战</a>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="top">
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="inner">
+      <div>
+        <span class="eyebrow"><span class="dot"></span>生活实验 · 影像创作 · 社区共拍</span>
+        <h1>任你糟</h1>
+        <p class="h1-en">RENNIZAO VIDEO LAB</p>
+        <p class="lede">把日子过得有点冒险：<strong>自煮实验、旧物改造、深夜改稿室、通勤观察</strong>——一群影像创作者用镜头记录「先动手、再解释」的过程。每周三、周六更新，所有系列都开放二创与投稿。</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="/#featured">看本周精选短片</a>
+          <a class="btn btn-ghost" href="/#guide">新观众入口</a>
+        </div>
+        <div class="stats">
+          <div><div class="n">186</div><div class="l">在册系列</div></div>
+          <div><div class="n">2,140</div><div class="l">社区投稿</div></div>
+          <div><div class="n">每周三 / 六</div><div class="l">更新时间</div></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="frame">
+          <img src="https://picsum.photos/seed/rennizao-cover11/800/400" width="800" height="400" alt="任你糟「深夜改稿室」拍摄现场，桌面散落手写分镜与台灯" loading="eager">
+          <div class="cap"><span class="t">深夜改稿室 · 第 5 期</span><span class="m">28 分钟</span></div>
+        </div>
+        <div class="float-card">
+          <span class="dotp"></span>
+          <div><b>今晚 21:10 直播</b><div class="sub2">「一锅到底」第 3 场 · 连麦答疑</div></div>
+        </div>
+        <div class="mini-strip">
+          <img src="https://picsum.photos/seed/rennizao-mini21/400/300" width="400" height="300" alt="旧物改造系列：旧木凳翻新过程" loading="lazy">
+          <img src="https://picsum.photos/seed/rennizao-mini22/400/300" width="400" height="300" alt="通勤观察系列：早高峰地铁站台取景" loading="lazy">
+          <img src="https://picsum.photos/seed/rennizao-mini23/400/300" width="400" height="300" alt="三十天自煮实验：第一周备菜台面" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+      <!-- 左频道索引 -->
+      <aside class="side-left">
+        <div class="channel-box">
+          <div class="hd">频道索引</div>
+          <nav class="channel-list" aria-label="频道索引">
+            <a class="active" href="/#featured">精选短片 <span class="cnt">36</span></a>
+            <a href="/#categories">自煮实验 <span class="cnt">24</span></a>
+            <a href="/#categories">旧物改造 <span class="cnt">19</span></a>
+            <a href="/#categories">深夜改稿室 <span class="cnt">31</span></a>
+            <a href="/#categories">通勤观察 <span class="cnt">17</span></a>
+            <a href="/#categories">城市夜行 <span class="cnt">14</span></a>
+            <a href="/#categories">一镜到底 <span class="cnt">22</span></a>
+            <a href="/#categories">创作者访谈 <span class="cnt">12</span></a>
+            <a href="/#categories">设备与方法 <span class="cnt">16</span></a>
+            <a href="/#challenge">月度挑战 <span class="cnt">08</span></a>
+          </nav>
+        </div>
+        <div class="side-note">
+          <b>投稿窗口</b>
+          11 月「一镜到底」挑战开放至 11-30，成片 60—180 秒，需附拍摄说明。入选作品进入下月精选。
+        </div>
+      </aside>
+
+      <!-- 中主内容 -->
+      <div class="main-col">
+
+        <!-- 1 主题领域概览 -->
+        <section class="block" id="overview">
+          <div class="block-head">
+            <h2><span class="num">01</span>这个影像实验场在拍什么</h2>
+          </div>
+          <div class="overview">
+            <div class="cols">
+              <p><span class="kw">任你糟</span>是一个以「先动手、再解释」为核心的生活实验影像品牌。它不做精修后的结果展示，而是把过程完整留在画面里：菜烧糊了、木料开裂、分镜推翻重写，这些失败段落同样是正片的一部分。内容方向大致分为四条主线——饮食实验、旧物改造、创作幕后与城市观察。</p>
+              <p>饮食线以「一锅到底」「三十天只吃自煮」为代表，记录有限预算与有限厨具下的具体做法；改造线以「旧木凳翻新」「坏掉的台灯重生」为代表，强调可复现的工序与工具清单；幕后线以「深夜改稿室」「分镜推翻现场」为代表，展示创作决策的真实取舍；观察线以「通勤观察」「城市夜行」为代表，用固定机位记录日常场景的变化。</p>
+              <p>当前值得关注的具体内容有三类。其一是长周期系列，例如「三十天只吃自煮」已经完结的全 8 集，适合按顺序连看；其二是一次性挑战企划，例如「一镜到底」月度赛，单集独立、信息密度高；其三是创作者访谈，配合具体作品讲方法与设备，适合已经看过正片、想了解制作路径的观众。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2 精选内容推荐 -->
+        <section class="block" id="featured">
+          <div class="block-head">
+            <h2><span class="num">02</span>本周精选短片</h2>
+            <a class="more" href="/#updates">全部更新 →</a>
+          </div>
+          <p class="lead">六条可独立观看的成片，覆盖饮食、改造、幕后与观察四条线，均标注时长与更新日期。</p>
+          <div class="cards" id="cardGrid">
+            <article class="card" data-keys="深夜改稿室 幕后 分镜 创作">
+              <div class="thumb">
+                <img src="https://picsum.photos/seed/rennizao-card01/400/300" width="400" height="300" alt="深夜改稿室第5期：手写分镜铺满桌面" loading="lazy">
+                <span class="badge">幕后</span><span class="hot">9.2 分</span>
+              </div>
+              <div class="body">
+                <h3>深夜改稿室 · 第 5 期：把 40 页分镜砍到 12 页</h3>
+                <p class="desc">记录一次真实的脚本推翻：三位创作者在同一张桌上争论开场三秒该放什么，最终留下 12 页可执行分镜，删掉的 28 页逐条说明理由。</p>
+                <div class="tags"><span class="tag brand">分镜</span><span class="tag">创作决策</span><span class="tag acc">28 分钟</span></div>
+                <div class="meta"><span>11-24 更新</span><b>播放 42.6 万</b></div>
+              </div>
+            </article>
+
+            <article class="card" data-keys="三十天 自煮 饮食 一锅到底 预算">
+              <div class="thumb">
+                <img src="https://picsum.photos/seed/rennizao-card02/400/300" width="400" height="300" alt="三十天只吃自煮系列：一周备菜与记账表" loading="lazy">
+                <span class="badge">饮食实验</span><span class="hot">8.8 分</span>
+              </div>
+              <div class="body">
+                <h3>三十天只吃自煮 · 全 8 集合集</h3>
+                <p class="desc">限定一口电锅与每天 40 分钟，连做 30 天。每集结尾公开当日花费与剩余食材，第 6 集起出现明显的重复疲劳，作者没有剪掉这段。</p>
+                <div class="tags"><span class="tag brand">自煮</span><span class="tag">预算记账</span><span class="tag acc">全 8 集</span></div>
+                <div class="meta"><span>11-22 完结</span><b>播放 118 万</b></div>
+              </div>
+            </article>
+
+            <article class="card" data-keys="旧木凳 翻新 旧物改造 木工 工具">
+              <div class="thumb">
+                <img src="https://picsum.photos/seed/rennizao-card03/400/300" width="400" height="300" alt="旧木凳翻新：榫卯开裂处修补特写" loading="lazy">
+                <span class="badge">旧物改造</span><span class="hot">9.0 分</span>
+              </div>
+              <div class="body">
+                <h3>旧木凳翻新：一根开裂榫头的补救方案</h3>
+                <p class="desc">从拆解、去漆到补榫，全程只用四件基础工具。作者在 11 分 20 秒处坦承第一次补接失败，并演示了更稳的第二种做法。</p>
+                <div class="tags"><span class="tag brand">木工</span><span class="tag">榫卯</span><span class="tag acc">16 分钟</span></div>
+                <div class="meta"><span>11-20 更新</span><b>播放 27.3 万</b></div>
+              </div>
+            </article>
+
+            <article class="card" data-keys="通勤观察 城市 固定机位 早高峰">
+              <div class="thumb">
+                <img src="https://picsum.photos/seed/rennizao-card04/400/300" width="400" height="300" alt="通勤观察：早高峰换乘通道固定机位画面" loading="lazy">
+                <span class="badge">城市观察</span><span class="hot">8.5 分</span>
+              </div>
+              <div class="body">
+                <h3>通勤观察 · 第 3 集：同一个换乘口的 90 天</h3>
+                <p class="desc">固定机位连续拍摄同一换乘通道，剪出人流节奏的变化。没有旁白，只有环境声与三行字幕，适合当背景影像反复看。</p>
+                <div class="tags"><span class="tag brand">固定机位</span><span class="tag">环境声</span><span class="tag acc">22 分钟</span></div>
+                <div class="meta"><span>11-18 更新</span><b>播放 19.8 万</b></div>
+              </div>
+            </article>
+
+            <article class="card" data-keys="坏掉的台灯 重生 电路 维修">
+              <div class="thumb">
+                <img src="https://picsum.photos/seed/rennizao-card05/400/300" width="400" height="300" alt="坏掉的台灯重生：拆开的灯座与线路" loading="lazy">
+                <span class="badge">旧物改造</span><span class="hot">8.7 分</span>
+              </div>
+              <div class="body">
+                <h3>坏掉的台灯重生：换线、换开关、不换灯罩</h3>
+                <p class="desc">一盏二手市场 8 元买回的台灯，线路老化。作者逐段讲清火线零线接法，并把「不确定就别通电」写在画面上方，安全提示贯穿全片。</p>
+                <div class="tags"><span class="tag brand">电路</span><span class="tag">二手改造</span><span class="tag acc">13 分钟</span></div>
+                <div class="meta"><span>11-16 更新</span><b>播放 31.5 万</b></div>
+              </div>
+            </article>
+
+            <article class="card" data-keys="创作者访谈 设备 方法 拍摄 预算">
+              <div class="thumb">
+                <img src="https://picsum.photos/seed/rennizao-card06/400/300" width="400" height="300" alt="创作者访谈现场：两台相机与受访者侧影" loading="lazy">
+                <span class="badge">创作者访谈</span><span class="hot">9.1 分</span>
+              </div>
+              <div class="body">
+                <h3>创作者访谈 04：一台旧相机拍完一整个系列</h3>
+                <p class="desc">受访者是「城市夜行」的作者，讲清为什么放弃升级设备、如何在低照度下控噪，以及一条片子的预算构成明细。</p>
+                <div class="tags"><span class="tag brand">访谈</span><span class="tag">设备方法</span><span class="tag acc">34 分钟</span></div>
+                <div class="meta"><span>11-14 更新</span><b>播放 22.1 万</b></div>
+              </div>
+            </article>
+          </div>
+          <div class="no-result" id="noResult">没有匹配的条目，换个关键词试试，例如「自煮」「分镜」「木工」。</div>
+        </section>
+
+        <!-- 3 最新更新 -->
+        <section class="block" id="updates">
+          <div class="block-head">
+            <h2><span class="num">03</span>最新更新与直播动态</h2>
+            <span class="more">截至 2026-11-25</span>
+          </div>
+          <ul class="updates">
+            <li><span class="time">今天 09:30</span><div><div class="t"><a href="/#featured">深夜改稿室 · 第 5 期</a><span class="pill">正片</span></div><div class="d">40 页分镜砍到 12 页的完整争论过程已上线，含删减页逐条说明。</div></div></li>
+            <li><span class="time">今天 08:10</span><div><div class="t"><a href="/#challenge">11 月「一镜到底」挑战</a><span class="pill">报名</span></div><div class="d">报名截至 11-30，成片 60—180 秒，需附拍摄说明与设备清单。</div></div></li>
+            <li><span class="time">昨天 21:10</span><div><div class="t"><a href="/#featured">一锅到底 · 第 3 场连麦答疑</a><span class="pill">直播</span></div><div class="d">回放已上传，重点回答「一人份怎么买菜不浪费」。</div></div></li>
+            <li><span class="time">昨天 15:40</span><div><div class="t"><a href="/#categories">通勤观察 · 第 4 集素材征集</a><span class="pill">征集</span></div><div class="d">征集同一站台的 30 秒固定机位片段，截止 11-28。</div></div></li>
+            <li><span class="time">11-24</span><div><div class="t"><a href="/#featured">三十天只吃自煮</a><span class="pill">完结</span></div><div class="d">第 8 集上线，公开 30 天总花费与食材剩余清单。</div></div></li>
+            <li><span class="time">11-23</span><div><div class="t"><a href="/#community">社区共拍计划第二期</a><span class="pill">公布</span></div><div class="d">入选 24 条投稿，主题为「我家楼下的一平米」。</div></div></li>
+            <li><span class="time">11-22</span><div><div class="t"><a href="/#featured">旧木凳翻新</a><span class="pill">正片</span></div><div class="d">补榫失败段落完整保留，附第二种做法的工具清单。</div></div></li>
+            <li><span class="time">11-20</span><div><div class="t"><a href="/#categories">设备与方法专栏</a><span class="pill">新增</span></div><div class="d">新增「低照度控噪三条经验」，配同场景对照截图。</div></div></li>
+            <li><span class="time">11-18</span><div><div class="t"><a href="/#featured">通勤观察 · 第 3 集</a><span class="pill">正片</span></div><div class="d">90 天固定机位剪辑完成，全片无旁白。</div></div></li>
+            <li><span class="time">11-16</span><div><div class="t"><a href="/#featured">坏掉的台灯重生</a><span class="pill">正片</span></div><div class="d">换线换开关教程上线，安全提示全程置顶。</div></div></li>
+            <li><span class="time">11-14</span><div><div class="t"><a href="/#featured">创作者访谈 04</a><span class="pill">访谈</span></div><div class="d">旧相机拍完整系列的预算明细与控噪方法。</div></div></li>
+            <li><span class="time">11-12</span><div><div class="t"><a href="/#news">月度榜单规则调整</a><span class="pill">规则</span></div><div class="d">12 月起榜单按「完播率 + 收藏数」加权，不再单看播放量。</div></div></li>
+          </ul>
+        </section>
+
+        <!-- 4 分类入口 -->
+        <section class="block" id="categories">
+          <div class="block-head">
+            <h2><span class="num">04</span>按类别找片</h2>
+          </div>
+          <div class="cats">
+            <a class="cat" href="/#featured"><span class="cn">自煮实验</span><span class="cd">有限预算、有限厨具下的具体做法与记账</span><span class="cc">24 个系列</span></a>
+            <a class="cat" href="/#featured"><span class="cn">旧物改造</span><span class="cd">木工、电路、缝补，附可复现工序与工具</span><span class="cc">19 个系列</span></a>
+            <a class="cat" href="/#featured"><span class="cn">创作幕后</span><span class="cd">分镜、拍摄、剪辑决策的真实取舍</span><span class="cc">31 个系列</span></a>
+            <a class="cat" href="/#featured"><span class="cn">城市观察</span><span class="cd">固定机位与长期记录，环境声为主</span><span class="cc">17 个系列</span></a>
+            <a class="cat" href="/#featured"><span class="cn">一镜到底</span><span class="cd">单镜头完成的短片与拍摄说明</span><span class="cc">22 个系列</span></a>
+            <a class="cat" href="/#featured"><span class="cn">创作者访谈</span><span class="cd">方法与设备，预算构成拆解</span><span class="cc">12 个系列</span></a>
+            <a class="cat" href="/#featured"><span class="cn">设备与方法</span><span class="cd">低照度、收音、稳定器的实操经验</span><span class="cc">16 个系列</span></a>
+            <a class="cat" href="/#challenge"><span class="cn">月度挑战</span><span class="cd">命题创作，单集独立、信息密度高</span><span class="cc">08 期</span></a>
+          </div>
+        </section>
+
+        <!-- 5 深度解析 -->
+        <section class="block" id="deep">
+          <div class="block-head">
+            <h2><span class="num">05</span>深度解析：生活实验影像怎么拍才耐看</h2>
+          </div>
+          <div class="deep">
+            <p>生活实验类影像看起来门槛低，实际最难的是「耐看」。同样的自煮、同样的翻新，为什么有的片子能让人连看八集，有的三十秒就划走？差别通常不在设备，而在三件事：过程是否真实、判断是否具体、节奏是否留白。</p>
+
+            <h3>过程真实：把失败留在画面里</h3>
+            <p>「旧木凳翻新」在 11 分 20 秒处坦白第一次补榫失败，这段没有被剪掉。观众记住的往往不是成功的成品，而是那个卡住的瞬间，因为它是可复现的——观众自己动手时也会卡在这里，于是有了对照。</p>
+            <ul>
+              <li>失败段落至少说明「为什么失败」，只放画面不给原因等于没讲。</li>
+              <li>给出第二次尝试的调整点，让观众能判断差异在哪。</li>
+              <li>不补拍成功镜头覆盖失败，破坏可信度。</li>
+            </ul>
+
+            <h3>判断具体：说清「为什么选这个」</h3>
+            <p>「三十天只吃自煮」每一集都公开当日花费与剩余食材，这个动作把抽象的「省钱」变成了可比较的数字。观众能据此判断自己能不能照做，而不是只听一句「很划算」。</p>
+            <div class="pull"><b>可操作的标准：</b>一条生活实验短片，如果关掉画面只听声音，仍然能听出「做了什么、花了多少、卡在哪一步」，它的信息密度通常就够了。</div>
+
+            <h3>节奏留白：别把每一秒都填满</h3>
+            <p>「通勤观察」全片无旁白，只有环境声与三行字幕。这种处理在短视频平台上不占优势，但它的完播率并不低，原因在于观众把它当背景影像循环播放。留白不是偷懒，而是给观众留出自己观察的空间。</p>
+            <ul>
+              <li>固定机位段落建议不短于 20 秒，太碎会失去观察感。</li>
+              <li>环境声不要压掉，它是这类片子的主要信息。</li>
+              <li>字幕只保留必要的时间、地点、数量，不解释情绪。</li>
+            </ul>
+
+            <h3>同题材怎么比较：四个判断维度</h3>
+            <p>面对两个都在做「旧物改造」的系列，可以用四个维度快速比较：工序是否完整、工具是否可复现、失败是否公开、成品是否可长期使用。任你糟在改造类内容上更偏向前三项，第四项通常在片尾用一句「用了三个月后的状态」补充。</p>
+            <ul>
+              <li><b>工序完整度</b>：拆解、处理、组装、检验是否齐全。</li>
+              <li><b>工具可复现</b>：是否只用常见工具，是否列出替代方案。</li>
+              <li><b>失败公开度</b>：失败段落是否保留并说明原因。</li>
+              <li><b>长期状态</b>：成品在数月后的使用反馈。</li>
+            </ul>
+
+            <h3>创作幕后为什么值得单独成线</h3>
+            <p>「深夜改稿室」把决策过程直接摊开：40 页分镜砍到 12 页，删掉的 28 页逐条说明理由。对普通观众，这是理解一条片子怎么成形的窗口；对创作者，这是比教程更直接的参考，因为教程告诉你「应该怎样」，而改稿室告诉你「当时为什么这样」。</p>
+            <p>这条线的价值在于它不可复制。每一条片子的删减理由都不同，观众看到的是具体判断，而不是通用模板。也正因如此，它更适合已经看过正片、想回头理解制作路径的观众，而不是第一次接触这个品牌的人。</p>
+          </div>
+        </section>
+
+        <!-- 6 体验指南 -->
+        <section class="block" id="guide">
+          <div class="block-head">
+            <h2><span class="num">06</span>第一次看，按这个顺序</h2>
+          </div>
+          <p class="lead">从单集独立、信息密度高的片子入手，再进入长周期系列，最后看幕后与访谈。</p>
+          <div class="steps">
+            <div class="step"><span class="no">1</span><div><h4>先看单集挑战</h4><p>「一镜到底」月度赛单集独立，60—180 秒，能最快判断自己是否喜欢这个品牌的节奏与语气。</p><div class="smeta">建议 2—3 集 · 约 10 分钟</div></div></div>
+            <div class="step"><span class="no">2</span><div><h4>再选一条改造或自煮</h4><p>看工序是否讲清、工具是否可复现。若你更在意动手，选改造；若更在意日常，选自煮。</p><div class="smeta">建议 1 条 · 约 15—20 分钟</div></div></div>
+            <div class="step"><span class="no">3</span><div><h4>进入长周期系列</h4><p>「三十天只吃自煮」全 8 集适合按顺序连看，注意每集结尾的花费与食材清单，那是系列的骨架。</p><div class="smeta">建议连看 · 约 70 分钟</div></div></div>
+            <div class="step"><span class="no">4</span><div><h4>最后看幕后与访谈</h4><p>「深夜改稿室」与「创作者访谈」偏方法，看过正片后再看，理解成本最低，收获也最直接。</p><div class="smeta">建议 1—2 期 · 约 30 分钟</div></div></div>
+            <div class="step"><span class="no">5</span><div><h4>判断值不值得投入时间</h4><p>看三点：失败段落是否保留、数字是否具体、成品是否有长期状态反馈。三点都有，通常值得连看。</p><div class="smeta">一条片子看前 3 分钟即可判断</div></div></div>
+            <div class="step"><span class="no">6</span><div><h4>参与社区共拍</h4><p>拍 30 秒固定机位片段投稿，主题每期不同。入选作品进入下月精选，并获得拍摄说明反馈。</p><div class="smeta">投稿窗口每月 1—28 日</div></div></div>
+          </div>
+        </section>
+
+        <!-- 7 FAQ -->
+        <section class="block" id="faq">
+          <div class="block-head">
+            <h2><span class="num">07</span>常见问题</h2>
+          </div>
+          <div class="faq">
+            <details open>
+              <summary>「三十天只吃自煮」和「一锅到底」有什么区别？</summary>
+              <div class="ans">前者是<b>长周期连续实验</b>，30 天不断更，重点在重复疲劳与预算控制；后者是<b>单集独立做法</b>，每集讲一道菜的一种做法，不要求连续观看。想了解日常饮食结构看前者，想直接照着做菜看后者。</div>
+            </details>
+            <details>
+              <summary>系列一般多久更新一次？</summary>
+              <div class="ans">固定更新为<b>每周三、周六</b>。长周期系列在周期内保持同一节奏，挑战企划按月度发布，创作者访谈约每月 1—2 期。直播答疑不定期，通常提前 2 天在公告条预告。</div>
+            </details>
+            <details>
+              <summary>第一次接触，从哪一条开始看比较好？</summary>
+              <div class="ans">推荐从「一镜到底」月度赛的单集开始，时长 60—180 秒，独立成片，不需要前情。若对动手类内容更感兴趣，可以直接看「旧木凳翻新」，工序完整、失败段落保留，能快速判断风格是否合你口味。</div>
+            </details>
+            <details>
+              <summary>旧物改造类的内容，评判标准通常是什么？</summary>
+              <div class="ans">主要看四点：<b>工序是否完整</b>（拆解到检验）、<b>工具是否可复现</b>（常见工具或给出替代）、<b>失败是否公开</b>（保留并说明原因）、<b>成品长期状态</b>（数月后的使用反馈）。四点齐全的片子，照着做的成功率明显更高。</div>
+            </details>
+            <details>
+              <summary>投稿有什么要求？会得到反馈吗？</summary>
+              <div class="ans">成片 30—180 秒，需附拍摄说明（机位、设备、拍摄时长）与一句创作意图。入选作品进入下月精选，并获得一条书面反馈，指出可取之处与可改进的一处。未入选不单独回复，但可在社区评论区提问。</div>
+            </details>
+            <details>
+              <summary>「深夜改稿室」适合非创作者看吗？</summary>
+              <div class="ans">适合，但建议先看过对应正片。这一系列讲的是<b>具体决策的取舍</b>，例如开场三秒为什么这样剪、哪些页被删掉。没有正片参照时，理解成本会偏高；看过正片后再看，相当于把一条片子倒回去拆开看。</div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 8 用户评论 -->
+        <section class="block" id="community">
+          <div class="block-head">
+            <h2><span class="num">08</span>社区评论</h2>
+            <span class="more">共 16 条 · 近 30 天</span>
+          </div>
+          <div class="comments">
+            <div class="cmt"><div class="ch"><span class="av" style="background:#c8392b">林</span><span class="nick">林间慢跑</span><span class="when">11-25</span></div><p class="txt">「深夜改稿室」第 5 期把删掉的 28 页逐条讲理由，这段比正片还有用。<b>尤其是开场三秒的取舍</b>，看第二遍才明白为什么要那样切。</p><span class="on">评论《深夜改稿室 · 第 5 期》</span></div>
+            <div class="cmt"><div class="ch"><span class="av" style="background:#1f6f63">周</span><span class="nick">周小满</span><span class="when">11-25</span></div><p class="txt">照着「旧木凳翻新」补了家里的凳子，第一次也失败了，跟片里一模一样。第二次按他说的先夹紧再上胶，稳了很多。</p><span class="on">评论《旧木凳翻新》</span></div>
+            <div class="cmt"><div class="ch"><span class="av" style="background:#b07b1e">陈</span><span class="nick">陈默的猫</span><span class="when">11-24</span></div><p class="txt">「三十天只吃自煮」第 6 集开始明显吃不下了，作者没剪掉那段，这点挺难得的。不过后面两集节奏确实有点拖。</p><span class="on">评论《三十天只吃自煮》</span></div>
+            <div class="cmt"><div class="ch"><span class="av" style="background:#8f2419">M</span><span class="nick">Momo不吃香菜</span><span class="when">11-24</span></div><p class="txt">台灯那期讲火线零线讲得很清楚，安全提示一直挂在画面上方，这个细节加分。就是 13 分钟有点赶，接线部分可以再慢一点。</p><span class="on">评论《坏掉的台灯重生》</span></div>
+            <div class="cmt"><div class="ch"><span class="av" style="background:#3d434d">阿</span><span class="nick">阿岚岚</span><span class="when">11-23</span></div><p class="txt">「通勤观察」第 3 集我当背景音循环了一下午，环境声做得很舒服。不过三行字幕有点少，想知道拍摄时段。</p><span class="on">评论《通勤观察 · 第 3 集》</span></div>
+            <div class="cmt"><div class="ch"><span class="av" style="background:#1f6f63">老</span><span class="nick">老周修东西</span><span class="when">11-23</span></div><p class="txt">改造类内容里工具清单写得最实在的一个，不用买一堆专用件。希望多出点电路类，台灯那期太短了。</p><span class="on">评论《坏掉的台灯重生》</span></div>
+            <div class="cmt"><div class="ch"><span class="av" style="background:#c8392b">小</span><span class="nick">小满的厨房</span><span class="when">11-22</span></div><p class="txt">一人份买菜不浪费这个问题问到点上了，回放里那段回答很具体，按份分装再冷冻这个方法我试了，确实省。</p><span class="on">评论《一锅到底 · 第 3 场》</span></div>
+            <div class="cmt"><div class="ch"><span class="av" style="background:#b07b1e">南</span><span class="nick">南巷口</span><span class="when">11-22</span></div><p class="txt">创作者访谈 04 的预算明细是真的敢公开，一条片子不到三百块。就是设备部分讲得偏技术，普通人可能听不太懂。</p><span class="on">评论《创作者访谈 04》</span></div>
+            <div class="cmt"><div class="ch"><span class="av" style="background:#3d434d">K</span><span class="nick">Kiki不是猫</span><span class="when">11-21</span></div><p class="txt">月度挑战的投稿质量参差不齐，但入选的那几条确实好看。希望评选标准能公开得更细一点，比如完播率占多少。</p><span class="on">评论《一镜到底月度挑战》</span></div>
+            <div class="cmt"><div class="ch"><span class="av" style="background:#1f6f63">木</span><span class="nick">木子李工坊</span><span class="when">11-20</span></div><p class="txt">作为木工从业者，看「旧木凳翻新」里的补榫做法基本没问题，第二种方案更稳。第一次失败那段保留得很诚实。</p><span class="on">评论《旧木凳翻新》</span></div>
+            <div class="cmt"><div class="ch"><span class="av" style="background:#c8392b">半</span><span class="nick">半糖少冰</span><span class="when">11-19</span></div><p class="txt">自煮系列看到第 4 集就有点疲劳了，重复感比较强。理解这是实验本身的一部分，但作为观众还是希望有点变化。</p><span class="on">评论《三十天只吃自煮》</span></div>
+            <div class="cmt"><div class="ch"><span class="av" style="background:#b07b1e">灯</span><span class="nick">灯下写字的人</span><span class="when">11-18</span></div><p class="txt">「深夜改稿室」这个名字取得好，内容也确实像真的在改稿，不是摆拍。就是有时声音偏小，戴耳机听比较清楚。</p><span class="on">评论《深夜改稿室 · 第 5 期》</span></div>
+            <div class="cmt"><div class="ch"><span class="av" style="background:#3d434d">大</span><span class="nick">大屿山风</span><span class="when">11-17</span></div><p class="txt">城市夜行那条低照度片段很惊艳，噪点控制得不错。访谈里讲的控噪三条经验我记下来了，回去试了一下确实有效。</p><span class="on">评论《创作者访谈 04》</span></div>
+            <div class="cmt"><div class="ch"><span class="av" style="background:#1f6f63">青</span><span class="nick">青柠气泡</span><span class="when">11-16</span></div><p class="txt">社区共拍第二期的主题「我家楼下的一平米」挺有意思，投稿里有些片段拍得比正片还松弛。</p><span class="on">评论《社区共拍计划》</span></div>
+            <div class="cmt"><div class="ch"><span class="av" style="background:#c8392b">远</span><span class="nick">远山有雾</span><span class="when">11-15</span></div><p class="txt">整体偏慢，适合晚上看。不太适合想快速找教程的人，工序讲得细但节奏不快，要有心理准备。</p><span class="on">评论《旧木凳翻新》</span></div>
+            <div class="cmt"><div class="ch"><span class="av" style="background:#b07b1e">小</span><span class="nick">小鹿乱撞墙</span><span class="when">11-14</span></div><p class="txt">一镜到底的挑战规则写得很清楚，60—180 秒、要附拍摄说明，比很多比赛透明。准备这周投稿试试。</p><span class="on">评论《一镜到底月度挑战》</span></div>
+          </div>
+        </section>
+
+        <!-- 9 相关资讯 -->
+        <section class="block" id="news">
+          <div class="block-head">
+            <h2><span class="num">09</span>相关资讯</h2>
+            <span class="more">2026 年 11 月</span>
+          </div>
+          <div class="news">
+            <article class="news-item">
+              <div class="nt"><img src="https://picsum.photos/seed/rennizao-news01/600/400" width="600" height="400" alt="深夜改稿室第5期上线相关画面" loading="lazy"></div>
+              <div class="nb"><h4><a href="/#featured">深夜改稿室第 5 期上线，首次公开删减页理由</a></h4><div class="nd">2026-11-25</div><p class="ns">40 页分镜砍到 12 页，被删的 28 页逐条说明取舍依据。</p></div>
+            </article>
+            <article class="news-item">
+              <div class="nt"><img src="https://picsum.photos/seed/rennizao-news02/600/400" width="600" height="400" alt="三十天只吃自煮系列完结画面" loading="lazy"></div>
+              <div class="nb"><h4><a href="/#featured">「三十天只吃自煮」完结，公开 30 天总花费</a></h4><div class="nd">2026-11-24</div><p class="ns">第 8 集附食材剩余清单，重复疲劳段落完整保留。</p></div>
+            </article>
+            <article class="news-item">
+              <div class="nt"><img src="https://picsum.photos/seed/rennizao-news03/600/400" width="600" height="400" alt="一镜到底挑战赛报名页面示意" loading="lazy"></div>
+              <div class="nb"><h4><a href="/#challenge">11 月「一镜到底」挑战报名开放至 11-30</a></h4><div class="nd">2026-11-25</div><p class="ns">成片 60—180 秒，需附拍摄说明与设备清单。</p></div>
+            </article>
+            <article class="news-item">
+              <div class="nt"><img src="https://picsum.photos/seed/rennizao-news04/600/400" width="600" height="400" alt="社区共拍计划第二期入选作品画面" loading="lazy"></div>
+              <div class="nb"><h4><a href="/#community">社区共拍第二期公布，24 条「楼下的一平米」入选</a></h4><div class="nd">2026-11-23</div><p class="ns">入选作品将进入 12 月精选，并获得书面反馈。</p></div>
+            </article>
+            <article class="news-item">
+              <div class="nt"><img src="https://picsum.photos/seed/rennizao-news05/600/400" width="600" height="400" alt="设备与方法专栏低照度控噪对照截图" loading="lazy"></div>
+              <div class="nb"><h4><a href="/#featured">设备与方法专栏新增低照度控噪三条经验</a></h4><div class="nd">2026-11-20</div><p class="ns">配同场景对照截图，说明降噪与细节保留的平衡点。</p></div>
+            </article>
+            <article class="news-item">
+              <div class="nt"><img src="https://picsum.photos/seed/rennizao-news06/600/400" width="600" height="400" alt="月度榜单规则调整说明图" loading="lazy"></div>
+              <div class="nb"><h4><a href="/#rank">月度榜单规则调整：改按完播率与收藏数加权</a></h4><div class="nd">2026-11-12</div><p class="ns">12 月起不再单看播放量，社区讨论集中在权重比例。</p></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 10 相关推荐 -->
+        <section class="block" id="related">
+          <div class="block-head">
+            <h2><span class="num">10</span>延伸方向</h2>
+          </div>
+          <p class="lead">按内容方向延伸，而不是按热度排序。适合已经看过精选、想换角度的人。</p>
+          <div class="rel">
+            <a href="/#featured">一人份备菜与冷冻分装 <span class="cnt">9 条</span></a>
+            <a href="/#featured">榫卯修补的三种做法 <span class="cnt">6 条</span></a>
+            <a href="/#featured">低照度拍摄控噪 <span class="cnt">7 条</span></a>
+            <a href="/#featured">固定机位长期记录 <span class="cnt">11 条</span></a>
+            <a href="/#featured">分镜删减与开场三秒 <span class="cnt">5 条</span></a>
+            <a href="/#featured">二手市场淘物与检验 <span class="cnt">8 条</span></a>
+            <a href="/#featured">收音与环境声采集 <span class="cnt">6 条</span></a>
+            <a href="/#challenge">命题创作的边界设定 <span class="cnt">4 条</span></a>
+          </div>
+        </section>
+
+        <!-- 11 热门榜单 -->
+        <section class="block" id="rank">
+          <div class="block-head">
+            <h2><span class="num">11</span>近 30 天热门榜单</h2>
+            <span class="more">按完播率与收藏数加权</span>
+          </div>
+          <ul class="rank">
+            <li><span class="rk">1</span><div class="rt">三十天只吃自煮 · 全 8 集<small>饮食实验 · 完结于 11-22</small></div><span class="rv">118.4 万</span></li>
+            <li><span class="rk">2</span><div class="rt">深夜改稿室 · 第 5 期<small>创作幕后 · 11-24 上线</small></div><span class="rv">42.6 万</span></li>
+            <li><span class="rk">3</span><div class="rt">坏掉的台灯重生<small>旧物改造 · 11-16 上线</small></div><span class="rv">31.5 万</span></li>
+            <li><span class="rk">4</span><div class="rt">旧木凳翻新<small>旧物改造 · 11-22 更新</small></div><span class="rv">27.3 万</span></li>
+            <li><span class="rk">5</span><div class="rt">创作者访谈 04<small>方法与设备 · 11-14 上线</small></div><span class="rv">22.1 万</span></li>
+            <li><span class="rk">6</span><div class="rt">通勤观察 · 第 3 集<small>城市观察 · 11-18 上线</small></div><span class="rv">19.8 万</span></li>
+            <li><span class="rk">7</span><div class="rt">一锅到底 · 第 3 场回放<small>直播答疑 · 11-24 回放</small></div><span class="rv">15.2 万</span></li>
+            <li><span class="rk">8</span><div class="rt">社区共拍第二期合集<small>社区投稿 · 11-23 公布</small></div><span class="rv">12.7 万</span></li>
+          </ul>
+          <div class="timeline" style="margin-top:22px">
+            <li><div class="td">2026-11-25</div><div class="tt">深夜改稿室第 5 期上线</div><div class="tx">首次公开 28 页删减分镜的逐条理由。</div></li>
+            <li><div class="td">2026-11-22</div><div class="tt">三十天只吃自煮完结</div><div class="tx">全 8 集收官，公开总花费与食材剩余。</div></li>
+            <li><div class="td">2026-11-16</div><div class="tt">坏掉的台灯重生上线</div><div class="tx">电路改造教程，安全提示全程置顶。</div></li>
+            <li><div class="td">2026-11-12</div><div class="tt">月度榜单规则调整</div><div class="tx">12 月起按完播率与收藏数加权。</div></li>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- 右辅助栏 -->
+      <aside class="side-right">
+        <div class="rbox">
+          <div class="rh"><span class="dot"></span>热榜速览<span class="mini">近 30 天</span></div>
+          <ul class="rtop">
+            <li><span class="rn">1</span><a class="rx" href="/#featured">三十天只吃自煮<span class="rc">全 8 集 · 完结</span></a><span class="rv">118 万</span></li>
+            <li><span class="rn">2</span><a class="rx" href="/#featured">深夜改稿室 第 5 期<span class="rc">创作幕后</span></a><span class="rv">42.6 万</span></li>
+            <li><span class="rn">3</span><a class="rx" href="/#featured">坏掉的台灯重生<span class="rc">旧物改造</span></a><span class="rv">31.5 万</span></li>
+            <li><span class="rn">4</span><a class="rx" href="/#featured">旧木凳翻新<span class="rc">木工工序</span></a><span class="rv">27.3 万</span></li>
+            <li><span class="rn">5</span><a class="rx" href="/#featured">创作者访谈 04<span class="rc">设备与方法</span></a><span class="rv">22.1 万</span></li>
+            <li><span class="rn">6</span><a class="rx" href="/#featured">通勤观察 第 3 集<span class="rc">固定机位</span></a><span class="rv">19.8 万</span></li>
+          </ul>
+        </div>
+        <div class="rbox">
+          <div class="rh"><span class="dot"></span>更新流<span class="mini">实时</span></div>
+          <ul class="rstream">
+            <li><span class="st">今天 09:30</span><br><b>深夜改稿室 · 第 5 期</b> 正片上线</li>
+            <li><span class="st">昨天 21:10</span><br><b>一锅到底</b> 第 3 场回放已上传</li>
+            <li><span class="st">11-24</span><br><b>三十天只吃自煮</b> 第 8 集完结</li>
+            <li><span class="st">11-22</span><br><b>旧木凳翻新</b> 补榫失败段落保留</li>
+            <li><span class="st">11-20</span><br><b>设备与方法</b> 新增控噪三条经验</li>
+          </ul>
+        </div>
+        <div class="rbox">
+          <div class="rh"><span class="dot"></span>投稿与挑战</div>
+          <div class="rnotify"><b>11 月「一镜到底」开放中</b>成片 60—180 秒，附拍摄说明与设备清单，截止 11-30。</div>
+          <a class="btn btn-primary" href="/#challenge" style="width:100%;margin-top:10px">查看规则</a>
+        </div>
+        <div class="rquote">
+          <div class="qm">“</div>
+          先动手，再解释。失败那段别剪，观众看得出来。
+          <div class="who">—— 任你糟 · 创作手记</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="inner">
+    <div class="foot-brand">
+      <div class="fb">
+        <svg width="30" height="30" viewBox="0 0 40 40" aria-hidden="true">
+          <rect x="1" y="1" width="38" height="38" rx="11" fill="#c8392b"/>
+          <path d="M13 11.5v17l15-8.5-15-8.5z" fill="#fff"/>
+        </svg>
+        <span class="name">任你糟</span>
+      </div>
+      <p>生活实验影像品牌。记录自煮、改造、创作幕后与城市观察的具体过程，所有系列开放二创与投稿。</p>
+      <div class="fsocial"><span>创作手记</span><span>社区共拍</span><span>投稿通道</span></div>
+    </div>
+    <div class="foot-cols">
+      <div>
+        <h5>内容线</h5>
+        <ul>
+          <li><a href="/#featured">自煮实验</a></li>
+          <li><a href="/#featured">旧物改造</a></li>
+          <li><a href="/#featured">创作幕后</a></li>
+          <li><a href="/#featured">城市观察</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>栏目</h5>
+        <ul>
+          <li><a href="/#updates">更新动态</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>社区</h5>
+        <ul>
+          <li><a href="/#community">用户评论</a></li>
+          <li><a href="/#challenge">月度挑战</a></li>
+          <li><a href="/#rank">热门榜单</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 任你糟 · 影像实验场</span>
+    <span>内容数据为示例条目，更新节奏以每周三、周六为准</span>
+    <span class="sp"></span>
+    <span>投稿窗口每月 1—28 日开放</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var input = document.getElementById('siteSearch');
+  var grid = document.getElementById('cardGrid');
+  var noResult = document.getElementById('noResult');
+  if(!input || !grid) return;
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
+  var data = cards.map(function(c){
+    var t = c.querySelector('h3') ? c.querySelector('h3').textContent : '';
+    var d = c.querySelector('.desc') ? c.querySelector('.desc').textContent : '';
+    var tags = Array.prototype.map.call(c.querySelectorAll('.tag'), function(x){return x.textContent;}).join(' ');
+    return { el:c, text:(t + ' ' + d + ' ' + tags + ' ' + (c.getAttribute('data-keys')||'')).toLowerCase() };
+  });
+  function run(){
+    var q = input.value.trim().toLowerCase();
+    var hit = 0;
+    data.forEach(function(item){
+      var ok = !q || item.text.indexOf(q) !== -1;
+      item.el.style.display = ok ? '' : 'none';
+      if(ok) hit++;
+    });
+    noResult.style.display = (q && hit === 0) ? 'block' : 'none';
+  }
+  input.addEventListener('input', run);
+  input.addEventListener('search', run);
+})();
+</script>
+</body>
+                                                 </html>
